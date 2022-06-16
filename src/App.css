@@ -1,0 +1,72 @@
+:root {
+  --gray-color: #616161;
+  --gray-light: #a1a1a1;
+  --black-color: hsl(220, 15%, 12%);
+  --yellow-light: #f7e7a1;
+  --primary-notes: #0f56b3;
+}
+
+.App {
+  font-family: Poppins;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "sidebar content content content content";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+.gray-col {
+  color: var(--gray-color);
+}
+
+.gray-light {
+  color: var(--gray-light);
+}
+
+.black-color {
+  color: var(--black-color);
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.gap {
+  gap: 1rem;
+}
+.txt-lg {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.txt-sm {
+  font-size: 14px;
+  line-height: 1rem;
+}
+
+.txt-xlg {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.txt-xxlg {
+  font-size: 40px;
+  font-weight: 600;
+}
+.cursorPointer {
+  cursor: pointer;
+}
