@@ -16,7 +16,7 @@ export const TopNav = () => {
       </div>
       {true ? (
         <div className="p-r-1">
-          <Link to={"/login"}>
+          <Link to="/login">
             <BiLogOut size={35} />
           </Link>
         </div>
