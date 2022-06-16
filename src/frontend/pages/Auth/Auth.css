@@ -28,10 +28,6 @@
     box-shadow: 1px 2px 3px rgb(0 0 0 /20%);
 }
 
-.signupPage{
-    /*  display: flex; */
-    /* justify-content: center; */
-}
 
 .signupContainer .btn{
     width: clamp(15rem,18rem,25rem);

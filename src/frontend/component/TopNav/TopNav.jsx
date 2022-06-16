@@ -10,7 +10,7 @@ export const TopNav = () => {
     <header className="nav-container black-color">
       <div className="flex-row gap p-l-3">
         <AiOutlineMenu size={25} />
-        <Link to={"/"}>
+        <Link to="/">
           <div className="txt-xlg">KipNote</div>
         </Link>
       </div>

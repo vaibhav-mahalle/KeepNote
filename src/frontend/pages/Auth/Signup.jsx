@@ -94,7 +94,7 @@ export const SignUp = () =>{
         </form>
 
         <button className="btn btn-outline-secondary">
-          <Link to="/Login">Already a User? Login</Link>
+          <Link to="/login">Already a User? Login</Link>
         </button>
       </div>
     </div>
