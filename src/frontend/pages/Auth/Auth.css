@@ -1,0 +1,65 @@
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: clamp(16rem, 18rem, 24rem);
+    
+}
+
+.input-box{
+    padding: 0.7rem 0.4rem;
+    border-radius: 5px;
+    border: 1px solid hsl(var(--secondary-color));
+}
+
+.signupForm{
+    width: clamp(15rem, 18rem, 25rem);
+}
+
+.signupContainer .page-heading{
+    padding-bottom: 0.5rem;
+    color: var(--primary-notes);
+}
+
+.signupContainer{
+    width: 22rem;
+    margin: 1rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    box-shadow: 1px 2px 3px rgb(0 0 0 /20%);
+}
+
+
+.signupContainer .btn{
+    width: clamp(15rem,18rem,25rem);
+    padding: 0.5rem;
+}
+
+.signupForm .btn-primary{
+    background-color: var(--primary-notes);
+    margin-bottom: 0.5rem;
+}
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 2rem;
+    width: 22rem;
+    box-shadow: 1px 2px 3px rgb(0 0 0 /20%);
+}
+
+.loginContainer .page-heading{
+    color: var(--primary-notes);
+}
+
+.loginContainer .btn-primary{
+    background-color: var(--primary-notes);
+}
+
+.loginPage{
+    padding: 2rem;
+}
+
+.guestDetails{
+    cursor: pointer;
+}

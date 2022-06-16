@@ -9,7 +9,7 @@ export const RouterPath = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/trash" element={<Trash/>}/>
-        <Route path="/archieve" element={<Archieve/>}/>
+        <Route path="/archive" element={<Archieve/>}/>
         <Route path="*" element={<PageNotFound/>}/>
     </Routes>
   )
