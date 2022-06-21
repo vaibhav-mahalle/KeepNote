@@ -15,39 +15,39 @@ export const SideNav = () => {
     <div className="sidenav-container">
       <NavLink to="/" style={getActiveStyle} className="sidebar-pill">
         <AiFillHome size={25} />
-        <p className="p-l-1">Home</p>
+        <p className="p-l-1 btn-label">Home</p>
       </NavLink>
 
       <NavLink to="/archive" style={getActiveStyle} className="sidebar-pill">
         <MdArchive size={25} />
-        <p className="p-l-1">Archive</p>
+        <p className="p-l-1 btn-label">Archive</p>
       </NavLink>
 
       <NavLink to="/trash" style={getActiveStyle} className="sidebar-pill">
         <FaTrash size={25} />
-        <p className="p-l-1">Trash</p>
+        <p className="p-l-1 btn-label">Trash</p>
       </NavLink>
 
       <p className="p-1 p-l-2 gray-light txt-lg">Labels</p>
 
       <NavLink to="/" className="sidebar-pill">
         <FiCheckCircle size={25} />
-        <p className="p-l-1">Todo</p>
+        <p className="p-l-1 btn-label">Todo</p>
       </NavLink>
 
       <NavLink to="/" className="sidebar-pill">
         <MdOutlineWork size={25} />
-        <p className="p-l-1">Work</p>
+        <p className="p-l-1 btn-label">Work</p>
       </NavLink>
 
       <NavLink to="/" className="sidebar-pill">
         <BsListCheck size={25} />
-        <p className="p-l-1">Chore</p>
+        <p className="p-l-1 btn-label">Chore</p>
       </NavLink>
 
       <NavLink to="/" className="sidebar-pill">
         <FaShoppingBag size={25} />
-        <p className="p-l-1">Shopping</p>
+        <p className="p-l-1 btn-label">Shopping</p>
       </NavLink>
     </div>
   );

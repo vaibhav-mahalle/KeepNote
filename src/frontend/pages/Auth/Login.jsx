@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import './Auth.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const Login = () => {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -14,12 +15,34 @@ export const Login = () => {
 
   const testCredentials = {
     email: "vaibhavmahalle95@gmail.com",
-    password: "Vaibhav123",
+    password: "vaibhavMahalle123",
   };
 
   const setLogin = () => {
     setLoginData(testCredentials);
   };
+
+  const handleLoginFunction = async() => {
+    try{
+      const res = await axios.post("/api/auth/login", loginData);
+
+      if(res.status === 200)
+      {
+        console.log("response ok",res.data);
+      }
+      else{
+        console.log("some error with response",res.status);
+      }
+  }catch(error){
+    console.log(loginData);
+    console.error("this error occured", error);
+  }
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    handleLoginFunction(); 
+  }
   return (
     <div className="loginPage">
       <main className="loginContainer">
@@ -53,7 +76,7 @@ export const Login = () => {
         <p className="guestDetails" onClick={setLogin}>
           Login with guest credentials?
         </p>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" onClick={handleLogin}>
           Sign In
         </button>
         <button className="btn btn-outline-secondary">

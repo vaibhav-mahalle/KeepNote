@@ -1,0 +1,20 @@
+.filter-container{
+    width: 25rem;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 2rem;
+    box-shadow: 2px 2px 6px rgb(0 0 0 /20%);
+}
+
+.filter-pill{
+    padding: 0.3rem;
+    width: 5rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: var(--border);
+}
+
+.filter-pill-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}

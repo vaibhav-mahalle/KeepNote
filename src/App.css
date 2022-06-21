@@ -4,6 +4,8 @@
   --black-color: hsl(220, 15%, 12%);
   --yellow-light: #f7e7a1;
   --primary-notes: #0f56b3;
+  --primary-light: #AECAEE;
+  --border: 2px solid var(--gray-light);
 }
 
 .App {
@@ -14,6 +16,7 @@
   grid-template-areas:
     "header header header header header"
     "sidebar content content content content";
+  position: relative;
 }
 
 .header {
@@ -56,6 +59,10 @@
   font-size: 14px;
   line-height: 1rem;
 }
+.txt-xs{
+  font-size: 11px;
+  font-weight: 600;
+}
 
 .txt-xlg {
   font-size: 22px;
@@ -68,4 +75,20 @@
 }
 .cursorPointer {
   cursor: pointer;
+}
+
+.empty-notes-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width:400px) {
+  .App{
+    grid-template-areas:
+    "header header header header header"
+    "content content content content content"
+    "sidebar sidebar sidebar sidebar sidebar";
+  }
 }
