@@ -17,3 +17,28 @@
     padding: 1rem;
     padding-left: 3rem;
 }
+
+@media screen and (max-width:700px) {
+    .sidenav-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        min-width: 100vw;
+        height: fit-content;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        z-index: 5;
+    }
+    .btn-label{
+        display: none;
+    }
+    /* .sidebar-pill{
+        width: 1rem;
+        display: flex;
+        flex-direction: column;
+        background-color: aqua;
+    } */
+}

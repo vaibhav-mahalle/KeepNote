@@ -1,6 +1,7 @@
 import "./Auth.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const SignUp = () =>{
   const initialDetails = {
@@ -19,12 +20,32 @@ export const SignUp = () =>{
     const propertyValue = e.target.value;
     setUserDetails({ ...userDetails, [propertyName]: propertyValue });
   };
+  const handleSignUp = async() => {
+    try{
+      const res = await axios.post("/api/auth/signup",userDetails);
+      
+      if(res.status === 201){
+        console.log("Status ok", res.data);
+      }
+      else{
+        console.log("some issue with response", res.status);
+      }
+    }
+    catch(error){
+      console.log("some error occured",error);
+    }
+  }
+  const signupHandler = (e) => {
+    e.preventDefault();
+    handleSignUp();
+    
+  }
   return (
     <div className="signupPage">
       <div className="signupContainer">
         <h1 className="page-heading">Signup</h1>
 
-        <form className="signupForm flex-column" onSubmit={(e)=>signupHandler(e)}>
+        <form className="signupForm flex-column" onSubmit={(e) => signupHandler(e)}>
           <div className="input-wrapper m-b-1">
             <label htmlFor="input">First Name</label>
             <input
@@ -80,7 +101,7 @@ export const SignUp = () =>{
             <label htmlFor="input">Confirm Password</label>
             <input
               type="password"
-              name="conirmPassword"
+              name="confirmPassword"
               required
               className="input-box font-xs"
               onChange={(e) => handleChange(e)}
