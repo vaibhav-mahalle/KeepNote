@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { Filter, TextEditor, ToastMsg } from "../../component";
+import { Filter, TextEditor } from "../../component";
 import { GiNotebook } from "react-icons/gi";
 
 

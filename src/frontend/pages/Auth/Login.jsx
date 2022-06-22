@@ -2,10 +2,8 @@
 import React, { useState } from "react";
 import './Auth.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useAuth } from "../../context/Auth/context";
 import { handleLoginFunction } from "../../context/Auth/utils";
-import { Toast } from "../../component";
 
 
 export const Login = () => {

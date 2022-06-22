@@ -1,7 +1,6 @@
 import "./Auth.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useAuth } from "../../context/Auth/context";
 import { handleSignUp } from "../../context/Auth/utils";
 
