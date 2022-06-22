@@ -2,6 +2,8 @@ import "./Auth.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../context/Auth/context";
+import { handleSignUp } from "../../context/Auth/utils";
 
 export const SignUp = () =>{
   const initialDetails = {
@@ -11,7 +13,7 @@ export const SignUp = () =>{
     password: "",
     confirmPassword: "",
   };
-
+  const {authDispatch} = useAuth();
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState(initialDetails);
 
@@ -20,26 +22,11 @@ export const SignUp = () =>{
     const propertyValue = e.target.value;
     setUserDetails({ ...userDetails, [propertyName]: propertyValue });
   };
-  const handleSignUp = async() => {
-    try{
-      const res = await axios.post("/api/auth/signup",userDetails);
-      
-      if(res.status === 201){
-        console.log("Status ok", res.data);
-      }
-      else{
-        console.log("some issue with response", res.status);
-      }
-    }
-    catch(error){
-      console.log("some error occured",error);
-    }
-  }
-  const signupHandler = (e) => {
+ 
+  const signupHandler = async (e) => {
     e.preventDefault();
-    handleSignUp();
-    
-  }
+    handleSignUp(userDetails, authDispatch, navigate);
+   }
   return (
     <div className="signupPage">
       <div className="signupContainer">

@@ -3,9 +3,17 @@ import React, { useState } from "react";
 import './Auth.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../context/Auth/context";
+import { handleLoginFunction } from "../../context/Auth/utils";
+import { Toast } from "../../component";
+
 
 export const Login = () => {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
+
+   const {authDispatch} = useAuth();
+   const location = useLocation();
+   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const inputName = e.target.name;
@@ -22,26 +30,12 @@ export const Login = () => {
     setLoginData(testCredentials);
   };
 
-  const handleLoginFunction = async() => {
-    try{
-      const res = await axios.post("/api/auth/login", loginData);
+  
 
-      if(res.status === 200)
-      {
-        console.log("response ok",res.data);
-      }
-      else{
-        console.log("some error with response",res.status);
-      }
-  }catch(error){
-    console.log(loginData);
-    console.error("this error occured", error);
-  }
-  }
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    handleLoginFunction(); 
+  const handleLogin = async (e) => {
+    e.preventDefault();    
+    handleLoginFunction(loginData, authDispatch, location, navigate);
+     
   }
   return (
     <div className="loginPage">
@@ -60,7 +54,7 @@ export const Login = () => {
             onChange={(e) => handleChange(e)}
           />
         </div>
-
+        
         <div className="input-wrapper m-b-1">
           <label htmlFor="input">Enter Password</label>
           <input
@@ -73,10 +67,10 @@ export const Login = () => {
             onChange={(e) => handleChange(e)}
           />
         </div>
-        <p className="guestDetails" onClick={setLogin}>
+        <p className="guestDetails" onClick={(e) =>setLogin(e)}>
           Login with guest credentials?
         </p>
-        <button className="btn btn-primary" onClick={handleLogin}>
+        <button className="btn btn-primary" onClick={(e)=>handleLogin(e)}>
           Sign In
         </button>
         <button className="btn btn-outline-secondary">
