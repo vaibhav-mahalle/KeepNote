@@ -1,0 +1,22 @@
+.editor-container{
+    width: 90%;
+    padding: 1rem;
+    aspect-ratio: 5/1;
+    border: var(--border);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tags-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}

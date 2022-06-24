@@ -1,5 +1,6 @@
 .filter-container{
-    width: 25rem;
+    width: fit-content;
+    aspect-ratio: 1/1;
     height: fit-content;
     border-radius: 5px;
     padding: 2rem;
@@ -14,7 +15,27 @@
     border: var(--border);
 }
 
+.filter-pill-btn{
+    padding: 0.3rem;
+    width: 5rem;
+    border-radius: 5px;
+    text-align: center;
+    border: var(--border);
+}
+
 .filter-pill-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+
+.filter-pill:hover{
+    background-color: var(--gray-light);
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.filter-btn-container{
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
 }
