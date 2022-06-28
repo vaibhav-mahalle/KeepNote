@@ -8,7 +8,7 @@ export const Filter = () => {
         <h3>Filter By:</h3>
       </div>
       <h5 className="gray-col">Labels:</h5>
-      <div className="filter-pill-container">
+      <div className="filter-pill-container m-t-1 m-b-1">
         <div className="filter-pill gray-col txt-xs">Todo</div>
         <div className="filter-pill gray-col txt-xs">Work</div>
         <div className="filter-pill gray-col txt-xs">Chore</div>
@@ -16,14 +16,14 @@ export const Filter = () => {
       </div>
       
       <h5 className="gray-col">Priority:</h5>
-      <div className="filter-pill-container">
+      <div className="filter-pill-container m-t-1 m-b-1">
         <div className="filter-pill gray-col txt-xs">low</div>
         <div className="filter-pill gray-col txt-xs">medium</div>
         <div className="filter-pill gray-col txt-xs">high</div>
       </div>
       
       <h5 className="gray-col">Date Added:</h5>
-      <div className="filter-pill-container">
+      <div className="filter-pill-container m-t-1 m-b-1">
         <div className="filter-pill gray-col txt-xs">latest</div>
         <div className="filter-pill gray-col txt-xs">oldest</div>
       </div>

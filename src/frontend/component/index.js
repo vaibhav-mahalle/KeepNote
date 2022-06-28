@@ -1,3 +1,4 @@
+export { Card } from "./Card/Card";
 export { ToastMsg } from "./Toast/ToastMsg";
 export { RequiresAuth } from "./RequiresAuth/RequiresAuth";
 export { TextEditor } from "./TextEditor/TextEditor";

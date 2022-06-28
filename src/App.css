@@ -5,6 +5,7 @@
   --yellow-light: #f7e7a1;
   --primary-notes: #0f56b3;
   --primary-light: #AECAEE;
+  --primary-lighter:#cbd9ec;
   --border: 2px solid var(--gray-light);
 }
 
@@ -102,6 +103,9 @@
   margin-top: 10rem;
 }
 
+.p-small{
+  padding: 0.5rem;
+}
 
 
 @media screen and (max-width:400px) {

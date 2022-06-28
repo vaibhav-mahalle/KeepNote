@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import { Filter, TextEditor } from "../../component";
 import { GiNotebook } from "react-icons/gi";
-import { MdOutlineFilterAlt, MdOutlineAddCircleOutline } from "react-icons/md";
+import { MdOutlineFilterAlt, MdAddCircle } from "react-icons/md";
 
 export const Home = () => {
   const [filterToggle, setFilterToggle] = useState(false);
@@ -16,7 +16,7 @@ export const Home = () => {
           className="cursorPointer"
           onClick={() => setFilterToggle((prev) => !prev)}
         />
-        <MdOutlineAddCircleOutline
+        <MdAddCircle
           size={50}
           color="var(--primary-notes)"
           className="cursorPointer"

@@ -4,6 +4,7 @@
     height: fit-content;
     border-radius: 5px;
     padding: 2rem;
+    margin-top: 2rem;
     box-shadow: 2px 2px 6px rgb(0 0 0 /20%);
 }
 
@@ -38,4 +39,5 @@
     display: flex;
     justify-content: space-around;
     gap: 0.5rem;
+    margin-top: 2rem;
 }
