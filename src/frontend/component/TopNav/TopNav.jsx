@@ -1,6 +1,5 @@
 import React from "react";
 import "./TopNav.css";
-import { AiOutlineMenu } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { BiLogIn, BiLogOut } from "react-icons/bi";
 import { useAuth } from "../../context/Auth/context";

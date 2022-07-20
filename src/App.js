@@ -3,7 +3,7 @@ import { SideNav, TopNav } from "./frontend/component";
 import { RouterPath } from "./frontend/router/RouterPath";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logo from "./logo.png";
+
 
 
 function App() {

@@ -1,0 +1,17 @@
+.btn-home-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    gap: 4rem;
+}
+
+.home-filter-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4rem;
+}
+
+.home-empty-container .empty-notes-container{
+    margin-top: 4.85rem;
+}
