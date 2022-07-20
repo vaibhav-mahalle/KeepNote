@@ -8,7 +8,7 @@ import { IoMdTrash } from "react-icons/io";
 export const Card = () => {
   return (
     <div className="noteCard">
-      <div className="txt-lg p-small p-l-1">
+      <div className="txt-lg p-small p-l-1 ">
         Title
       </div>
       <div className="noteContent">

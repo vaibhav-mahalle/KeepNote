@@ -5,7 +5,7 @@ import "./TextEditor.css";
 import { MdCheckCircle, MdOutlineCancel } from "react-icons/md";
 
 export const TextEditor = () => {
-  const [text, setText] = useState({title:"", note:""});
+  const [text, setText] = useState({ title: "", note: "" });
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, false] }],
@@ -19,10 +19,9 @@ export const TextEditor = () => {
   };
 
   const handleChange = (e) => {
-    const inputName= e.target.name;
+    const inputName = e.target.name;
     const inputValue = e.target.value;
-    setText({...text, [inputName]: inputValue});
-    
+    setText({ ...text, [inputName]: inputValue });
   };
   console.log(text);
   return (
@@ -32,10 +31,16 @@ export const TextEditor = () => {
           <label htmlFor="title" className="txt-lg">
             Title:
           </label>
-          <input type="text" name="title" placeholder="title" value={text.title} onChange={(e)=> handleChange(e)}/>
+          <input
+            type="text"
+            name="title"
+            placeholder="title"
+            value={text.title}
+            onChange={(e) => handleChange(e)}
+          />
         </div>
         <div>
-          <label htmlFor="title" >
+          <label htmlFor="title">
             <span className="txt-lg">Priority:</span>
             <select name="priority" className="txt-sm">
               <option value="high">High</option>
@@ -52,7 +57,7 @@ export const TextEditor = () => {
           name="note"
           placeholder="Enter Note..."
           value={text.note}
-          onChange={(e)=>setText({...text, note: e})}
+          onChange={(e) => setText({ ...text, note: e })}
         />
       </div>
       <div className="editor-btn-container">
