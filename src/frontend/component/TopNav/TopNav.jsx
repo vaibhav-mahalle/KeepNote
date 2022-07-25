@@ -10,6 +10,7 @@ export const TopNav = () => {
   const { authState, authDispatch } = useAuth();
   const { isLoggedIn } = authState;
 
+
   return (
     <header className="nav-container black-color">
       <div className="flex-row gap p-l-3">
@@ -30,7 +31,7 @@ export const TopNav = () => {
             <div className="txt-xs gray-col align-icon-pd">logout</div>
           </div>
         ) : (
-          <div className="p-r-1 cursorPointer empty-notes-container icon-container">
+          <div className="p-r-1 cursorPointer ">
             <Link to="/login">
               <div>
                 <BiLogIn size={35} className="gray-col" />
