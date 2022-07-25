@@ -13,12 +13,12 @@ export const handleLoginFunction = async (
       localStorage.setItem("UserToken", res.data.encodedToken);
       authDispatch({
         type: "LOGIN",
-        payload: { token: res.data.encodedToken, user: res.data.foundUser },
+        payload: {  user: res.data.foundUser, token: res.data.encodedToken, },
       });
       ToastMsg("Log in successful", "success");
       navigate(location.state?.from?.pathname || "/");
     } else {
-      console.log("some error with response", res.status);
+      ToastMsg("some error with response", "error");
     }
   } catch (error) {
     if (error.response.status == 401) {
