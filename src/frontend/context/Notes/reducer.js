@@ -1,4 +1,4 @@
-export default function notesReducer(state, { type, payload }) {
+export  function notesReducer(state, { type, payload }) {
     const defaultNotes = {
       title: "",
       body: "",

@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import {noteReducer} from './reducer';
+import {notesReducer} from './reducer';
 
 const NotesContext = createContext(null);
 
