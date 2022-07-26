@@ -7,6 +7,15 @@
   --primary-light: #AECAEE;
   --primary-lighter:#cbd9ec;
   --border: 2px solid var(--gray-light);
+
+    --white-color: hsl(0, 0%, 90%);
+    --pastel-shade-red:  hsl(0deg 100% 50% / 39%);
+    --pastel-shade-green: hsl(156, 75%, 64%);
+    --pastel-shade-yellow:  rgb(255 235 59 / 49%);
+    --pastel-shade-blue: hsl(211, 100%, 72%); 
+    --dark-gray: hsl(0, 8%, 37%);
+    --yellow-color: hsl(45, 100%, 51%);
+    --light-black: hsl(0deg 10% 15% / 75%);
 }
 
 .App {
@@ -65,12 +74,27 @@
   align-items: center;
 }
 
+.d-flex{
+  display: flex;
+}
+.d-grid{
+  display: grid;
+}
 .gap {
   gap: 1rem;
+}
+
+.gap-sm{
+  gap: 0.5rem;
 }
 .txt-lg {
   font-size: 18px;
   font-weight: 500;
+}
+
+.text-sm{
+  font-size: 14px;
+  line-height: 1rem;
 }
 
 .txt-sm {
@@ -95,6 +119,10 @@
   cursor: pointer;
 }
 
+.p-rel {
+  position: relative;
+}
+
 .empty-notes-container{
   display: flex;
   flex-direction: column;
@@ -107,6 +135,22 @@
   padding: 0.5rem;
 }
 
+.children-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.children-stacked {
+  display: flex;
+  flex-direction: column;
+}
+
+.children-stacked-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 @media screen and (max-width:400px) {
   .App{
@@ -115,4 +159,42 @@
     "content content content content content"
     "sidebar sidebar sidebar sidebar sidebar";
   }
+}
+
+.notebtn {
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-radius: 0.25rem;
+  margin: 0 0.5rem;
+  color: var(--white-color);
+  box-shadow: 2px 4px 10px var(--shadow-color);
+}
+
+.notebtn:hover {
+  cursor: pointer;
+}
+
+.notebtn-link {
+  background-color: transparent;
+  color: var(--primary-notes);
+  font-weight: 600;
+  box-shadow: none;
+  margin: 0.25rem;
+}
+
+.notebtn-link:hover {
+  background-color: var(--primary-lighter);
+}
+
+.notes-list{
+  margin-top: 1rem;
+   flex-wrap: wrap;
+   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+   justify-items: center;
+   column-gap: 0.5rem;
 }
