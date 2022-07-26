@@ -1,12 +1,12 @@
 import axios from "axios";
-import { Toast } from "components";
+import { ToastMsg} from "../../component";
 
 const getArchivedNotes = async (isLoggedIn, dispatchNotes, navigate) => {
   if (isLoggedIn) {
     try {
       const response = await axios.get("/api/archives", {
         headers: {
-          authorization: localStorage.getItem("userToken"),
+          authorization: localStorage.getItem("UserToken"),
         },
       });
       if (response.status === 200) {
@@ -15,24 +15,21 @@ const getArchivedNotes = async (isLoggedIn, dispatchNotes, navigate) => {
           payload: response.data.archives,
         });
       } else {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } catch (err) {
-      Toast({
-        message: "Some error occured, please try again later",
-        type: "error",
-      });
+      ToastMsg(
+        "Some error occured, please try again later",
+         "error");
     }
   } else {
     navigate("/signup");
 
-    Toast({
-      message: "Please login to continue.",
-      type: "warning",
-    });
+    ToastMsg(
+      "Please login to continue.",
+       "warning");
   }
 };
 
@@ -45,7 +42,7 @@ const moveNoteToArchive = async (isLoggedIn, note, dispatchNotes, navigate) => {
         { note },
         {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         }
       );
@@ -54,29 +51,25 @@ const moveNoteToArchive = async (isLoggedIn, note, dispatchNotes, navigate) => {
           type: "MOVE_TO_ARCHIVE",
           payload: response.data,
         });
-        Toast({
-          message: "Note moved to archives.",
-          type: "success",
-        });
+        ToastMsg(
+          "Note moved to archives.",
+           "success");
       } else {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } catch (err) {
-      Toast({
-        message: "Some error occured, please try again later",
-        type: "error",
-      });
+      ToastMsg(
+        "Some error occured, please try again later",
+         "error");
     }
   } else {
     navigate("/signup");
 
-    Toast({
-      message: "Please login to continue.",
-      type: "warning",
-    });
+    ToastMsg(
+      "Please login to continue.",
+       "warning");
   }
 };
 
@@ -89,7 +82,7 @@ const restoreFromArchive = async (isLoggedIn, id, dispatchNotes, navigate) => {
         {},
         {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         }
       );
@@ -98,28 +91,24 @@ const restoreFromArchive = async (isLoggedIn, id, dispatchNotes, navigate) => {
           type: "MOVE_TO_ARCHIVE",
           payload: response.data,
         });
-        Toast({
-          message: "Note unarchived successfully",
-          type: "success",
-        });
+        ToastMsg(
+          "Note unarchived successfully",
+           "success");
       } else {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } catch (err) {
-      Toast({
-        message: "Some error occured, please try again later",
-        type: "error",
-      });
+      ToastMsg(
+        "Some error occured, please try again later",
+         "error");
     }
   } else {
     navigate("/signup");
-    Toast({
-      message: "Please login to continue.",
-      type: "warning",
-    });
+    ToastMsg(
+      "Please login to continue.",
+       "warning");
   }
 };
 
@@ -134,7 +123,7 @@ const moveNoteToTrashFromArchive = async (
     try {
       const response = await axios.delete(path, {
         headers: {
-          authorization: localStorage.getItem("userToken"),
+          authorization: localStorage.getItem("UserToken"),
         },
       });
       if (response.status === 200) {
@@ -143,28 +132,24 @@ const moveNoteToTrashFromArchive = async (
           payload: { archives: response.data.archives, note_id: id },
         });
 
-        Toast({
-          message: "Note moved to trash.",
-          type: "success",
-        });
+        ToastMsg(
+          "Note moved to trash.",
+           "success");
       } else {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } catch (err) {
-      Toast({
-        message: "Some error occured, please try again later",
-        type: "error",
-      });
+      ToastMsg(
+        "Some error occured, please try again later",
+         "error");
     }
   } else {
     navigate("/signup");
-    Toast({
-      message: "Please login to continue.",
-      type: "warning",
-    });
+    ToastMsg(
+      "Please login to continue.",
+       "warning");
   }
 };
 
@@ -173,7 +158,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
       try {
         const response = await axios.get("/api/notes", {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         });
         if (response.status === 200) {
@@ -182,24 +167,22 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
             payload: response.data.notes,
           });
         } else {
-          Toast({
-            message: "Some error occured, please try again later",
-            type: "error",
-          });
+          ToastMsg(
+            "Some error occured, please try again later",
+            "error"
+);
         }
       } catch (err) {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } else {
       navigate("/signup");
   
-      Toast({
-        message: "Please login to continue.",
-        type: "warning",
-      });
+      ToastMsg(
+        "Please login to continue.",
+         "warning");
     }
   };
   
@@ -211,24 +194,26 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
     setShowEditor
   ) => {
     if (!note.title) {
-      Toast({
-        message: "Please add a title to your note",
-        type: "error",
-      });
+      ToastMsg(
+        "Please add a title to your note",
+         "error");
       return;
     }
     if (isLoggedIn) {
       note.createdAt = new Date().toLocaleString();
+      console.log(note);
+      console.log(localStorage.getItem("UserToken"),"localstorage");
       try {
         const response = await axios.post(
           "/api/notes",
           { note },
           {
             headers: {
-              authorization: localStorage.getItem("userToken"),
+              authorization: localStorage.getItem("UserToken"),
             },
           }
         );
+        console.log(response,"response")
         if (response.status === 201) {
           dispatchNotes({
             type: "CREATE_NOTE",
@@ -236,29 +221,28 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
           });
           setShowEditor(false);
   
-          Toast({
-            message: "Added new note successfully",
-            type: "success",
-          });
+          ToastMsg(
+            "Added new note successfully",
+            "success"
+);
         } else {
-          Toast({
-            message: "Some error occured, please try again later",
-            type: "error",
-          });
+          ToastMsg(
+            "Some error occured in creating note, please try again later",
+            "error"
+);
         }
       } catch (err) {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        console.log(err);
+        ToastMsg(
+          "Some error occured cannot post notes, please try again later",
+           "error");
       }
     } else {
       navigate("/signup");
   
-      Toast({
-        message: "Please login to continue.",
-        type: "warning",
-      });
+      ToastMsg(
+        "Please login to continue.",
+         "warning");
     }
   };
   
@@ -268,7 +252,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
       try {
         const response = await axios.delete(path, {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         });
         if (response.status === 200) {
@@ -277,29 +261,27 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
             payload: { notes: response.data.notes, note: note },
           });
   
-          Toast({
-            message: "Note moved to trash.",
-            type: "success",
-          });
+          ToastMsg(
+            "Note moved to trash.",
+            "success"
+);
         } else {
-          Toast({
-            message: "Some error occured, please try again later",
-            type: "error",
-          });
+          ToastMsg(
+            "Some error occured, please try again later",
+            "error"
+);
         }
       } catch (err) {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } else {
       navigate("/signup");
   
-      Toast({
-        message: "Please login to continue.",
-        type: "warning",
-      });
+      ToastMsg(
+        "Please login to continue.",
+         "warning");
     }
   };
   
@@ -319,7 +301,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
           { note },
           {
             headers: {
-              authorization: localStorage.getItem("userToken"),
+              authorization: localStorage.getItem("UserToken"),
             },
           }
         );
@@ -331,30 +313,28 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
   
           if (!isOnlyColorChange) {
             setShowEditor(false);
-            Toast({
-              message: "Modified note.",
-              type: "success",
-            });
+            ToastMsg(
+              "Modified note.",
+              "success"
+  );
           }
         } else {
-          Toast({
-            message: "Some error occured, please try again later",
-            type: "error",
-          });
+          ToastMsg(
+            "Some error occured, please try again later",
+            "error"
+);
         }
       } catch (err) {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } else {
       navigate("/signup");
   
-      Toast({
-        message: "Please login to continue.",
-        type: "warning",
-      });
+      ToastMsg(
+        "Please login to continue.",
+         "warning");
     }
   };
   
@@ -364,7 +344,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
       try {
         const response = await axios.delete(path, {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         });
         if (response.status === 200) {
@@ -372,28 +352,26 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
             type: "DELETE_NOTE",
             payload: { notes: response.data.notes, delete_id: id },
           });
-          Toast({
-            message: "Note deleted successfully",
-            type: "success",
-          });
+          ToastMsg(
+            "Note deleted successfully",
+            "success"
+);
         } else {
-          Toast({
-            message: "Some error occured, please try again later",
-            type: "error",
-          });
+          ToastMsg(
+            "Some error occured, please try again later",
+            "error"
+);
         }
       } catch (err) {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } else {
       navigate("/signup");
-      Toast({
-        message: "Please login to continue.",
-        type: "warning",
-      });
+      ToastMsg(
+        "Please login to continue.",
+         "warning");
     }
   };
   
@@ -406,7 +384,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
           { note },
           {
             headers: {
-              authorization: localStorage.getItem("userToken"),
+              authorization: localStorage.getItem("UserToken"),
             },
           }
         );
@@ -415,28 +393,26 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
             type: "RESTORE_FROM_TRASH",
             payload: { notes: response.data.notes, restore_id: note._id },
           });
-          Toast({
-            message: "Note restored successfully",
-            type: "success",
-          });
+          ToastMsg(
+            "Note restored successfully",
+            "success"
+);
         } else {
-          Toast({
-            message: "Some error occured, please try again later",
-            type: "error",
-          });
+          ToastMsg(
+            "Some error occured, please try again later",
+            "error"
+);
         }
       } catch (err) {
-        Toast({
-          message: "Some error occured, please try again later",
-          type: "error",
-        });
+        ToastMsg(
+          "Some error occured, please try again later",
+           "error");
       }
     } else {
       navigate("/signup");
-      Toast({
-        message: "Please login to continue.",
-        type: "warning",
-      });
+      ToastMsg(
+        "Please login to continue.",
+         "warning");
     }
   };
 
