@@ -178,7 +178,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
            "error");
       }
     } else {
-      navigate("/signup");
+      navigate("/login");
   
       ToastMsg(
         "Please login to continue.",
