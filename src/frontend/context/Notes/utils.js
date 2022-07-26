@@ -6,7 +6,7 @@ const getArchivedNotes = async (isLoggedIn, dispatchNotes, navigate) => {
     try {
       const response = await axios.get("/api/archives", {
         headers: {
-          authorization: localStorage.getItem("userToken"),
+          authorization: localStorage.getItem("UserToken"),
         },
       });
       if (response.status === 200) {
@@ -42,7 +42,7 @@ const moveNoteToArchive = async (isLoggedIn, note, dispatchNotes, navigate) => {
         { note },
         {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         }
       );
@@ -82,7 +82,7 @@ const restoreFromArchive = async (isLoggedIn, id, dispatchNotes, navigate) => {
         {},
         {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         }
       );
@@ -123,7 +123,7 @@ const moveNoteToTrashFromArchive = async (
     try {
       const response = await axios.delete(path, {
         headers: {
-          authorization: localStorage.getItem("userToken"),
+          authorization: localStorage.getItem("UserToken"),
         },
       });
       if (response.status === 200) {
@@ -158,7 +158,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
       try {
         const response = await axios.get("/api/notes", {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         });
         if (response.status === 200) {
@@ -202,13 +202,14 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
     if (isLoggedIn) {
       note.createdAt = new Date().toLocaleString();
       console.log(note);
+      console.log(localStorage.getItem("UserToken"),"localstorage");
       try {
         const response = await axios.post(
           "/api/notes",
           { note },
           {
             headers: {
-              authorization: localStorage.getItem("userToken"),
+              authorization: localStorage.getItem("UserToken"),
             },
           }
         );
@@ -231,6 +232,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
 );
         }
       } catch (err) {
+        console.log(err);
         ToastMsg(
           "Some error occured cannot post notes, please try again later",
            "error");
@@ -250,7 +252,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
       try {
         const response = await axios.delete(path, {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         });
         if (response.status === 200) {
@@ -299,7 +301,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
           { note },
           {
             headers: {
-              authorization: localStorage.getItem("userToken"),
+              authorization: localStorage.getItem("UserToken"),
             },
           }
         );
@@ -342,7 +344,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
       try {
         const response = await axios.delete(path, {
           headers: {
-            authorization: localStorage.getItem("userToken"),
+            authorization: localStorage.getItem("UserToken"),
           },
         });
         if (response.status === 200) {
@@ -382,7 +384,7 @@ const getAllNotes = async (isLoggedIn, dispatchNotes, navigate) => {
           { note },
           {
             headers: {
-              authorization: localStorage.getItem("userToken"),
+              authorization: localStorage.getItem("UserToken"),
             },
           }
         );

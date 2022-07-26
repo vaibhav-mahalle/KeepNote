@@ -36,6 +36,6 @@ const FilterNotesProvider = ({ children }) => {
   );
 };
 
-const useFilterNotes = () => useContext(FilterNotessContext);
+const useFilterNotes = () => useContext(FilterNotesContext);
 
 export { useFilterNotes, FilterNotesProvider };

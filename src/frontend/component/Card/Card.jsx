@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import { MdColorLens, MdRestoreFromTrash } from "react-icons/md";
 import { BsVectorPen } from "react-icons/bs";
@@ -6,6 +6,7 @@ import { ImFolderDownload, ImFolderUpload } from "react-icons/im";
 import { IoMdTrash } from "react-icons/io";
 
 export const Card = () => {
+  
   return (
     <div className="noteCard">
       <div className="txt-lg p-small p-l-1 ">
